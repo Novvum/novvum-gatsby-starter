@@ -1,10 +1,9 @@
 const req = require('require-yml')
 const config = req('./config.yml')
 
-console.log(config.siteMetadata.title)
 module.exports = {
   siteMetadata: {
-    title: config.siteMetadata.title,
+    ...config.siteMetadata,
   },
   plugins: [
     'gatsby-plugin-react-helmet',

@@ -1,5 +1,7 @@
 siteMetadata:
   title: 'Novvum Gatsby Starter'
+  description: 'A GatsbyJS stater by Novvum'
+  keywords: 'gatsby, gatsbyjs, starter, novvum, graphql, react'
 
 manifest:
   name: 'Novvum Gatsby Starter'

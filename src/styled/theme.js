@@ -1,29 +1,31 @@
+import shadows from './shadows'
+import shape from './shape'
+
 const communityColors = {
   novvum: {
     main: '#2AC3D3',
     dark: '#2b2b2b',
     neutral: '#f7f7f7',
-    other: '#10506D',
+    alt: '#10506D',
   },
   graphql: {
     main: '#E535AB',
     neutral: '#f8f8f8',
     dark: '#2a3746',
-    other: '#532acd',
+    alt: '#532acd',
   },
   apollo: {
     main: '#14cbc4',
     neutral: '#f7f8fa',
     dark: '#23232f',
-    other: '#290ba0',
+    alt: '#290ba0',
   },
   prisma: {
     main: '#0c344b',
     neutral: '#269331',
     dark: '#191913',
-    other: '#324259',
+    alt: '#324259',
   },
-  primary: '#007CFC',
 }
 
 export const darkColors = {
@@ -211,6 +213,8 @@ export const lightEditorColors = {
   circle: 'rgba(23,42,58,.4)',
 }
 
+const pxToRem = size => `${(size / htmlFontSize) * coef}rem`
+
 export const sizes = {
   small6: '6px',
   small10: '10px',
@@ -223,6 +227,7 @@ export const sizes = {
     lg: '90vh',
     full: '100vh',
   },
+
   // font weights
   fontLight: '300',
   fontSemiBold: '600',
@@ -231,9 +236,17 @@ export const sizes = {
   fontTiny: '12px',
   fontSmall: '14px',
   fontMedium: '20px',
-
   // others
   smallRadius: '2px',
+}
+
+const zIndex = {
+  mobileStepper: 1000,
+  appBar: 1100,
+  drawer: 1200,
+  modal: 1300,
+  snackbar: 1400,
+  tooltip: 1500,
 }
 
 export const theme = {
@@ -242,7 +255,22 @@ export const theme = {
     ...darkColors,
     light: lightColors,
     ...communityColors,
+    primary: {
+      main: '#2AC3D3',
+      dark: '#1d8893',
+      light: '#54cfdb',
+      text: '#2b2b2b',
+    },
+    secondary: {
+      main: '#10506D',
+      dark: '#0b384c',
+      light: '#3f738a',
+      text: 'white',
+    },
   },
   sizes,
+  shape,
+  shadows,
+  zIndex,
   editorColors: darkEditorColors,
 }
