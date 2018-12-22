@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { styled } from '../styled'
 
 const HeroWrapper = styled.div`
+  flex: 1;
 	width: 100%;
 	height: ${p => p.theme.sizes.hero[p.height]};
 	overflow: hidden;
@@ -15,24 +16,24 @@ const HeroWrapper = styled.div`
 	background-image: url("${p => p.image || '/assets/DarkMachine.png'}");
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-color: rgba(0,0,0,.5); // Tint color
+	background-color: rgba(0,0,0,.5); 
   background-blend-mode: darken;
 `
 
 const HeroTitle = styled.h1`
   font-size: 2em;
-  color: ${p => p.theme.colors.white};
+  color: white;
   font-weight: 600;
   width: 60%;
 `
 
 const HeroCaption = styled.p`
-  color: ${p => p.theme.colors.white};
   width: 60%;
+  color: rgba(255, 255, 255, 0.75);
 `
 
-const Hero = ({ title, caption, image }) => (
-  <HeroWrapper image={image}>
+const Hero = ({ title, caption, image, height }) => (
+  <HeroWrapper height={height} image={image}>
     <HeroTitle>{title}</HeroTitle>
     <HeroCaption>{caption}</HeroCaption>
   </HeroWrapper>
@@ -42,7 +43,7 @@ Hero.propTypes = {
   title: PropTypes.string,
   caption: PropTypes.string,
   image: PropTypes.string,
-  height: PropTypes.oneOf('lg', 'md', 'full'),
+  height: PropTypes.string,
 }
 
 Hero.defaultProps = {

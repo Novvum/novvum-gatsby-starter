@@ -1,6 +1,6 @@
 import shadows from './shadows'
 import shape from './shape'
-
+import typography from './typography'
 const communityColors = {
   novvum: {
     main: '#2AC3D3',
@@ -213,31 +213,12 @@ export const lightEditorColors = {
   circle: 'rgba(23,42,58,.4)',
 }
 
-const pxToRem = size => `${(size / htmlFontSize) * coef}rem`
-
 export const sizes = {
-  small6: '6px',
-  small10: '10px',
-  small12: '12px',
-  small16: '16px',
-  medium25: '25px',
-  // hero heights
   hero: {
     md: '50vh',
     lg: '90vh',
-    full: '100vh',
+    full: '100%',
   },
-
-  // font weights
-  fontLight: '300',
-  fontSemiBold: '600',
-
-  // font sizes
-  fontTiny: '12px',
-  fontSmall: '14px',
-  fontMedium: '20px',
-  // others
-  smallRadius: '2px',
 }
 
 const zIndex = {
@@ -248,18 +229,17 @@ const zIndex = {
   snackbar: 1400,
   tooltip: 1500,
 }
-
 export const theme = {
   mode: 'dark',
   colors: {
-    ...darkColors,
+    dark: darkColors,
     light: lightColors,
     ...communityColors,
     primary: {
-      main: '#2AC3D3',
-      dark: '#1d8893',
-      light: '#54cfdb',
-      text: '#2b2b2b',
+      main: communityColors.graphql.main,
+      dark: communityColors.graphql.dark,
+      light: communityColors.graphql.light,
+      text: '#fff',
     },
     secondary: {
       main: '#10506D',
@@ -267,10 +247,15 @@ export const theme = {
       light: '#3f738a',
       text: 'white',
     },
+    tint: '#474747',
   },
   sizes,
   shape,
   shadows,
+  typography,
   zIndex,
-  editorColors: darkEditorColors,
+  editorColors: {
+    dark: darkEditorColors,
+    light: lightEditorColors,
+  },
 }

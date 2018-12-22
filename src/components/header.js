@@ -3,20 +3,29 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { styled } from '../styled'
 
-const AppBar = styled.div`
+const AppBar = styled.header`
   display: flex;
-  flex-direction: column;
+  flex-flow: row nowrap;
+  align-items: flex-start;
   width: 100%;
   box-sizing: border-box;
   z-index: ${p => p.theme.zIndex.appBar};
   flex-shrink: 0;
   position: fixed;
+  padding: 1rem;
   top: 0;
   left: auto;
   right: 0;
   background: ${p => p.theme.colors.primary.main};
+  transition: all 150ms ease 0s;
   color: ${p => p.theme.colors.primary.text};
   box-shadow: ${p => p.theme.shadows[4]};
+`
+
+const HeaderWrapper = styled.div`
+  height: 1rem;
+  width: 100%;
+  background: transparent;
 `
 
 const Toolbar = styled.div`
@@ -45,31 +54,37 @@ const Toolbar = styled.div`
 `
 
 const Brand = styled(Link)`
-  text-decoration: none;
+  text-decoration: none !important;
+  align-items: center;
+  display: flex;
+  color: inherit;
+  margin-right: ${p => p.theme.typography.rhythm(1 / 2)};
+  span {
+    margin-left: 8px;
+  }
+`
+
+const BrandIcon = styled.img`
+  height: 1.55rem;
+  object-fit: contain;
+  margin: 0;
 `
 
 const Header = ({ siteTitle }) => (
-  <AppBar>
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </AppBar>
+  <HeaderWrapper>
+    <AppBar>
+      <Toolbar>
+        <Brand to="/" aria-label="Gatsby, Back to homepage">
+          <BrandIcon
+            src={'/assets/gatsby-icon.png'}
+            alt="Gatsby Logo"
+            aria-hidden="true"
+          />
+          <span>{siteTitle}</span>
+        </Brand>
+      </Toolbar>
+    </AppBar>
+  </HeaderWrapper>
 )
 
 Header.propTypes = {

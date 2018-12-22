@@ -1,2 +1,2 @@
-export * from './styled';
-export { default as styled } from './styled';
+export * from './styled'
+export { default as styled } from './styled'
