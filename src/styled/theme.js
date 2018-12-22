@@ -1,6 +1,9 @@
 import shadows from './shadows'
 import shape from './shape'
 import typography from './typography'
+
+// const viewport = typeof window !== 'undefined' && window
+
 const communityColors = {
   novvum: {
     main: '#2AC3D3',
@@ -215,8 +218,8 @@ export const lightEditorColors = {
 
 export const sizes = {
   hero: {
-    md: '50vh',
-    lg: '90vh',
+    md: '50%',
+    lg: '90%',
     full: '100%',
   },
 }
@@ -229,24 +232,16 @@ const zIndex = {
   snackbar: 1400,
   tooltip: 1500,
 }
+
 export const theme = {
   mode: 'dark',
   colors: {
-    dark: darkColors,
+    ...darkColors,
     light: lightColors,
     ...communityColors,
-    primary: {
-      main: communityColors.graphql.main,
-      dark: communityColors.graphql.dark,
-      light: communityColors.graphql.light,
-      text: '#fff',
-    },
-    secondary: {
-      main: '#10506D',
-      dark: '#0b384c',
-      light: '#3f738a',
-      text: 'white',
-    },
+    primary: '#003459',
+    secondary: '#00A8E8',
+    alternative: '#007EA7',
     tint: '#474747',
   },
   sizes,

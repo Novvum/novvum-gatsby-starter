@@ -10,7 +10,7 @@ const Content = styled.div`
   flex-wrap: wrap;
   flex-flow: column;
   .with-padding {
-    padding: 1rem;
+    padding: 1rem 2.5rem 1rem 2.5rem;
   }
 `
 

@@ -10,25 +10,23 @@ const HeroWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	align-items: center;
-	text-align: center;
 	justify-content: center;
-	background-image: url("${p => p.image || '/assets/DarkMachine.png'}");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-color: rgba(0,0,0,.5); 
-  background-blend-mode: darken;
+  background: ${p => p.theme.colors.darkBlue};
+  padding: 2.5rem;
+	/* background-image: url("${p => p.image || '/assets/DarkMachine.png'}"); */
+	/* background-size: cover; */
+	/* background-repeat: no-repeat; */
+	/* background-color: rgba(0,0,0,.5);  */
+  /* background-blend-mode: darken; */
 `
 
 const HeroTitle = styled.h1`
   font-size: 2em;
   color: white;
   font-weight: 600;
-  width: 60%;
 `
 
 const HeroCaption = styled.p`
-  width: 60%;
   color: rgba(255, 255, 255, 0.75);
 `
 
