@@ -9,7 +9,10 @@ const Content = styled.div`
   flex: 1;
   flex-wrap: wrap;
   flex-flow: column;
-  .with-padding {
+  .tp {
+    padding-top: 1rem;
+  }
+  .wp {
     padding: 1rem 2.5rem 1rem 2.5rem;
   }
 `

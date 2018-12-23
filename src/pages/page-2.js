@@ -6,7 +6,7 @@ import Hero from '../components/hero'
 const SecondPage = () => (
   <Layout>
     <Hero title="Page 2" caption="Welcome to page 2" />
-    <div className="with-padding">
+    <div className="wp">
       <h2>Hi from the second page</h2>
       <p>Welcome to page 2</p>
       <Link to="/">Go back to the homepage</Link>
