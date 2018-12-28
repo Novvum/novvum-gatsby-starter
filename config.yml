@@ -1,17 +1,27 @@
 siteMetadata:
-  title: 'Novvum Gatsby Starter'
-  description: 'A GatsbyJS stater by Novvum'
-  keywords: 'gatsby, gatsbyjs, starter, novvum, graphql, react'
+  title: "Novvum Gatsby Starter"
+  description: "A GatsbyJS stater by Novvum"
+  keywords: "gatsby, gatsbyjs, starter, novvum, graphql, react"
+  links:
+    - link:
+        title: "Home"
+        path: "/"
+    - link:
+        title: "About"
+        path: "/about"
+    - link:
+        title: "Work"
+        path: "/work"
 
 manifest:
-  name: 'Novvum Gatsby Starter'
-  short_name: 'Novvum Gatsby'
-  description: 'A GatsbyJS stater by Novvum'
-  start_url: '/'
-  background_color: '#f7f7f7'
-  theme_color: '#10506D'
-  display: 'minimal-ui'
-  icon: 'static/assets/gatsby-icon.png'
+  name: "Novvum Gatsby Starter"
+  short_name: "Novvum Gatsby"
+  description: "A GatsbyJS stater by Novvum"
+  start_url: "/"
+  background_color: "#f7f7f7"
+  theme_color: "#10506D"
+  display: "minimal-ui"
+  icon: "static/assets/gatsby-icon.png"
 
 analytics:
-  googleTrackingId: ''
+  googleTrackingId: ""

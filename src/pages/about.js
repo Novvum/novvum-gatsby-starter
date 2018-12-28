@@ -5,7 +5,7 @@ import Hero from '../components/hero'
 
 const SecondPage = () => (
   <Layout>
-    <Hero title="Page 2" caption="Welcome to page 2" />
+    <Hero title="About Page" caption="Welcome to the About Page" />
     <div className="wp">
       <h2>Hi from the second page</h2>
       <p>Welcome to page 2</p>

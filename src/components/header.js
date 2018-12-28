@@ -70,6 +70,14 @@ const BrandIcon = styled.img`
   margin: 0;
 `
 
+const NavItems = styled.nav`
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: space-evenly;
+  width: 30%;
+`
+
 const Header = ({ siteTitle }) => (
   <HeaderWrapper>
     <AppBar>
