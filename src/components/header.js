@@ -16,7 +16,7 @@ const AppBar = styled.header`
   top: 0;
   left: auto;
   right: 0;
-  background: white;
+  background: ${p => p.theme.colors.white};
   transition: all 150ms ease 0s;
 
   box-shadow: ${p => p.theme.shadows[4]};

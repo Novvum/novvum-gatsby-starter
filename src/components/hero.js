@@ -11,19 +11,17 @@ const HeroWrapper = styled.div`
 	flex-direction: column;
 	flex-wrap: wrap;
 	justify-content: center;
-  background: ${p => p.theme.colors.darkBlue};
   padding: 2.5rem;
-  color: white;
-
-	/* background-image: url("${p => p.image || '/assets/DarkMachine.png'}"); */
-	/* background-size: cover; */
-	/* background-repeat: no-repeat; */
-	/* background-color: rgba(0,0,0,.5);  */
-  /* background-blend-mode: darken; */
+  color: ${p => p.theme.colors.white};
+  background-color:  ${p => p.theme.editorColors.dark.editorBackground}; 
+	/* background-image: url("${p => p.image || '/assets/graphqlEngine.svg'}");
+	background-size: cover; 	
+  background-repeat: no-repeat;
+  background-blend-mode: darken; */
 `
 
 const HeroCaption = styled.p`
-  color: rgba(255, 255, 255, 0.75);
+  color: ${p => p.theme.colors.white60};
 `
 
 const Hero = ({
