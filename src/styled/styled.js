@@ -1,7 +1,7 @@
 import * as styledComponents from 'styled-components'
 import { ComponentClass } from 'react'
 import { theme } from './theme'
-
+import { mobile, phone } from './mobile'
 const viewport = typeof window !== 'undefined' && window
 const {
   default: styled,
@@ -20,6 +20,8 @@ export {
   withTheme,
   createGlobalStyle,
   viewport,
+  mobile,
+  phone,
 }
 export default styled
 
