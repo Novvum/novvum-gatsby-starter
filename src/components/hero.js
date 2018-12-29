@@ -14,7 +14,7 @@ const HeroWrapper = styled.div`
 	justify-content: center;
   padding: 2.5rem;
   color: ${p => p.theme.colors.white};
-  background-color:  ${p => p.theme.editorColors.dark.editorBackground}; 
+  background-color:  ${p => p.theme.editorColors.dark.resultBackground}; 
 	/* background-image: url("${p => p.image || '/assets/graphqlEngine.svg'}");
 	background-size: cover; 	
   background-repeat: no-repeat;

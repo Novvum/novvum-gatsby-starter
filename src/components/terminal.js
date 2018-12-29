@@ -1,4 +1,4 @@
-import {styled} from '../styled'
+import { styled } from '../styled'
 
 const standard = props => `
   padding: ${props.padding || '2.25em .5em .5em .5em'};
@@ -61,7 +61,8 @@ export const Browser = styled.div`
 
 export const Terminal = styled.section`
   border: ${props => props.border || '0.05em solid #000'};
-  background: ${props => props.background || '#000'};
+  background: ${props =>
+    props.background || props.theme.editorColors.dark.editorBackground};
   color: white;
   ${standard} &:after {
     top: 0.8em;
@@ -70,9 +71,13 @@ export const Terminal = styled.section`
   }
   &:before {
     height: ${props => props.barHeight || '2em'};
-    background: ${props => props.background || '#000'};
-    border-bottom: ${props => props.divider || '0.05em solid #000'};
-    background: ${props => props.topbarColor || '#000'};
+    background: ${props =>
+      props.background || props.theme.editorColors.dark.editorBackground};
+    border-bottom: ${props =>
+      props.divider ||
+      `0.05em solid ${props.theme.editorColors.dark.editorBackground}`};
+    background: ${props =>
+      props.topbarColor || props.theme.editorColors.dark.editorBackground};
     ${before};
   }
 `

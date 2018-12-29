@@ -2,8 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import Parallax, { OverflowSection } from '../components/parallax'
-import { GridItem } from '../components/generic'
-import { Terminal } from '../components/terminal'
+import { GridItem, TerminalType } from '../components/generic'
 
 const Work = () => (
   <Layout>
@@ -14,16 +13,16 @@ const Work = () => (
       </GridItem>
     </Parallax>
     <OverflowSection>
-      <Terminal>
-        <GridItem white>
-          <pre>
-            $ ~/: echo "We love GraphQL!"
-            <br />
-            $ ~/: echo "We love React!"
-            <br />$ ~/: echo "We love NodeJS!"
-          </pre>
-        </GridItem>
-      </Terminal>
+      <TerminalType
+        items={[
+          'We love React!',
+          'We love Apollo!',
+          'We love Prisma!',
+          'We love Hasura!',
+        ]}
+      >
+        We love GraphQL!
+      </TerminalType>
     </OverflowSection>
     <div className="wp">
       <h2>Our Work</h2>

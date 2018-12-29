@@ -8,7 +8,7 @@ const ParallaxContainer = styled.div`
   overflow: hidden;
   position: relative;
   background-size: cover;
-  background-color: ${p => p.theme.editorColors.dark.editorBackground};
+  background-color: ${p => p.theme.colors.darkBlue};
   background-blend-mode: hard-light;
   margin: 0;
   padding: 0;

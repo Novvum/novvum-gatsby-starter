@@ -8,7 +8,7 @@ import Header from './header'
 const Content = styled.div`
   flex: 1;
   flex-wrap: wrap;
-  flex-flow: column;
+  flex-direction: column;
   .tp {
     padding-top: 1rem;
   }
