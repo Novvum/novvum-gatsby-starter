@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { styled } from '../styled'
+import { Caption, Container } from './generic'
 
 const HeroWrapper = styled.div`
   flex: 1;
@@ -20,18 +21,16 @@ const HeroWrapper = styled.div`
   background-blend-mode: darken; */
 `
 
-const HeroCaption = styled.p`
-  color: ${p => p.theme.colors.white60};
-`
-
 const Hero = ({
   title = 'Novvum Gatsby Starter',
   caption = 'This is a small starter kit to help you kickstart your Gatsby project!',
   height = '75%',
 }) => (
   <HeroWrapper height={height}>
-    <h1>{title}</h1>
-    <HeroCaption>{caption}</HeroCaption>
+    <Container>
+      <h1>{title}</h1>
+      <Caption>{caption}</Caption>
+    </Container>
   </HeroWrapper>
 )
 

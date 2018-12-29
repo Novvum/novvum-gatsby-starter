@@ -17,18 +17,21 @@ export const Container = styled.div`
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
+  color: ${p => (p.white ? 'white' : 'inherit')};
   margin-left: auto;
   width: 100%;
-  color: white;
 `
 
-export const Center = styled(Container)`
+export const GridItem = styled(Container)`
   flex: 1;
   display: flex;
   height: 100%;
   flex-wrap: wrap;
   flex-direction: column;
-  align-items: center;
+  padding: 2.5rem;
   justify-content: center;
-  text-align: center;
+`
+
+export const Caption = styled.p`
+  color: ${p => p.theme.colors.white60};
 `

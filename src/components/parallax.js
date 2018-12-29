@@ -1,5 +1,5 @@
 import React from 'react'
-import { styled, viewport, keyframes } from '../styled'
+import { styled, viewport } from '../styled'
 
 const ParallaxContainer = styled.div`
   height: ${p => p.height || '100%'};
@@ -8,7 +8,8 @@ const ParallaxContainer = styled.div`
   overflow: hidden;
   position: relative;
   background-size: cover;
-  background-color: black;
+  background-color: ${p => p.theme.editorColors.dark.editorBackground};
+  background-blend-mode: hard-light;
   margin: 0;
   padding: 0;
   border: 0;
