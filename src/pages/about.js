@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import Hero from '../components/hero'
 
-const SecondPage = () => (
+const About = () => (
   <Layout>
     <Hero title="About Page" caption="Welcome to the About Page" />
     <div className="wp">
@@ -14,4 +14,4 @@ const SecondPage = () => (
   </Layout>
 )
 
-export default SecondPage
+export default About

@@ -2,8 +2,6 @@ import shadows from './shadows'
 import shape from './shape'
 import typography from './typography'
 
-// const viewport = typeof window !== 'undefined' && window
-
 const communityColors = {
   novvum: {
     main: '#2AC3D3',
@@ -240,6 +238,7 @@ export const theme = {
     light: lightColors,
     ...communityColors,
     tint: '#474747',
+    link: '#4078c0',
   },
   sizes,
   shape,

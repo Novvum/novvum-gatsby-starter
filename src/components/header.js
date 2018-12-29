@@ -1,7 +1,8 @@
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { styled } from '../styled'
+import { StaticQuery, graphql } from 'gatsby'
+import { styled, theme } from '../styled'
 
 const AppBar = styled.header`
   display: flex;
@@ -18,7 +19,7 @@ const AppBar = styled.header`
   right: 0;
   background: ${p => p.theme.colors.white};
   transition: all 150ms ease 0s;
-
+  justify-content: space-between;
   box-shadow: ${p => p.theme.shadows[4]};
 `
 
@@ -70,7 +71,7 @@ const BrandIcon = styled.img`
   margin: 0;
 `
 
-const NavItems = styled.nav`
+const NavContainer = styled.nav`
   display: flex;
   align-items: center;
   align-self: center;
@@ -78,21 +79,66 @@ const NavItems = styled.nav`
   width: 30%;
 `
 
+const NavLink = styled(Link)`
+  color: ${p => p.theme.colors.tint};
+  &:hover {
+    color: ${p => p.theme.colors.link};
+    text-decoration: none;
+  }
+`
+
 const Header = ({ siteTitle }) => (
-  <HeaderWrapper>
-    <AppBar>
-      <Toolbar>
-        <Brand to="/" aria-label="Gatsby, Back to homepage">
-          <BrandIcon
-            src={'/assets/gatsby-icon.png'}
-            alt="Gatsby Logo"
-            aria-hidden="true"
-          />
-          <span>{siteTitle}</span>
-        </Brand>
-      </Toolbar>
-    </AppBar>
-  </HeaderWrapper>
+  <StaticQuery
+    query={graphql`
+      {
+        site {
+          siteMetadata {
+            title
+            links {
+              link {
+                title
+                path
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={data => {
+      const links = data.site.siteMetadata.links
+      const title = data.site.siteMetadata.title
+      return (
+        <HeaderWrapper>
+          <AppBar>
+            <Toolbar>
+              <Brand to="/" aria-label="Gatsby, Back to homepage">
+                <BrandIcon
+                  src={'/assets/gatsby-icon.png'}
+                  alt="Gatsby Logo"
+                  aria-hidden="true"
+                />
+                <span>{title}</span>
+              </Brand>
+              <NavContainer>
+                {links.map(l => (
+                  <NavLink
+                    to={l.link.path}
+                    activeStyle={{
+                      color: theme.colors.link,
+                      borderBottomColor: theme.colors.link,
+                      textDecoration: 'underline',
+                    }}
+                  >
+                    {l.link.title}
+                  </NavLink>
+                ))}
+              </NavContainer>
+            </Toolbar>
+          </AppBar>
+        </HeaderWrapper>
+      )
+    }}
+  />
 )
 
 Header.propTypes = {
