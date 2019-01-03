@@ -2,10 +2,9 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import { styled, theme, mobile, css, keyframes } from '../styled'
+import { styled, theme, mobile, css } from '../styled'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes } from '@fortawesome/pro-regular-svg-icons'
-import { auto } from 'eol'
 
 const AppBar = styled.header`
   display: flex;
