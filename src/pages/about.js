@@ -1,11 +1,11 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import Hero from '../components/hero'
 import { Container } from '../components/generic'
-import Image from '../components/image'
 
-const About = () => (
+const About = ({ data }) => (
   <Layout>
     <Hero title="About Page" caption="Welcome to the About Page" />
     <div className="wp">
@@ -19,11 +19,23 @@ const About = () => (
             margin-bottom: 1.45rem;
           `}
         >
-          <Image />
+          <Img fluid={data.placeholderImage.childImageSharp.fluid} />
         </div>
       </Container>
     </div>
   </Layout>
 )
+
+export const query = graphql`
+  query {
+    placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
 
 export default About

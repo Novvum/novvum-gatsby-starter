@@ -45,12 +45,12 @@ export const TerminalType = ({ items, children }) => {
       <Terminal height="300px">
         <GridItem>
           <Typing>
-            <pre>{children}</pre>
+            <code>{children}</code>
             {items.map((item, i) => (
-              <pre key={item}>
+              <code key={item}>
                 <Typing.Delay ms={1000 + i * 100} />
                 {item}
-              </pre>
+              </code>
             ))}
           </Typing>
         </GridItem>

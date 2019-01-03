@@ -6,9 +6,8 @@ import { ThemeProvider, theme as styledTheme, styled } from '../styled'
 import Header from './header'
 
 const Content = styled.div`
-  flex: 1;
-  flex-wrap: wrap;
-  flex-direction: column;
+  height: 100%;
+  width: 100%;
   .tp {
     padding-top: 1rem;
   }
@@ -20,9 +19,6 @@ const Content = styled.div`
 const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-flow: column;
-  flex-wrap: wrap;
 `
 
 const Layout = ({ children }) => (

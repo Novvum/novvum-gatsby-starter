@@ -220,6 +220,7 @@ export const sizes = {
     lg: '90%',
     full: '100%',
   },
+  navbarHeight: 50,
 }
 
 const zIndex = {
